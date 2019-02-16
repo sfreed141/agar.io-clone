@@ -24,7 +24,7 @@ steps:
   inputs:
     connectionType: 'AzureRM'
     azureSubscription: agariocloneARM
-    appType: 'webApp' # Required when connectionType == AzureRM
+    appType: 'webAppLinux' # Required when connectionType == AzureRM
       # Options: webApp, webAppLinux, webAppContainer, functionApp, functionAppLinux, functionAppContainer, apiApp, mobileApp
     webAppName: 'agarioclone' # Required when connectionType == AzureRM
     #publishProfilePath: '$(System.DefaultWorkingDirectory)/**/*.pubxml' # Required when connectionType == PublishProfile
