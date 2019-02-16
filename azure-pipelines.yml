@@ -20,6 +20,10 @@ steps:
     npm run build
   displayName: 'npm install and build'
 
+- script: |
+    zip -r agarioclone.zip .
+  displayName: 'zip'
+
 - task: AzureRmWebAppDeployment@4
   inputs:
     connectionType: 'AzureRM'
@@ -27,16 +31,7 @@ steps:
     appType: 'webAppLinux' # Required when connectionType == AzureRM
       # Options: webApp, webAppLinux, webAppContainer, functionApp, functionAppLinux, functionAppContainer, apiApp, mobileApp
     webAppName: 'agarioclone' # Required when connectionType == AzureRM
-    #publishProfilePath: '$(System.DefaultWorkingDirectory)/**/*.pubxml' # Required when connectionType == PublishProfile
-    #publishProfilePassword: # Required when connectionType == PublishProfile
-    #deployToSlotOrASE: false # Optional
-    #resourceGroupName: # Required when deployToSlotOrASE == True
-    #slotName: 'production' # Required when deployToSlotOrASE == True
-    #dockerNamespace: # Required when appType == WebAppContainer || WebAppkind == FunctionAppContainer
-    #dockerRepository: # Required when appType == WebAppContainer || WebAppkind == FunctionAppContainer
-    #dockerImageTag: # Optional
-    #virtualApplication: # Optional
-    #packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip' # Required when connectionType == PublishProfile || WebAppKind == WebApp || WebAppKind == ApiApp || WebAppKind == FunctionApp || WebAppKind == MobileApp || WebAppKind == WebAppLinux || WebAppKind == FunctionAppLinux
+    packageForLinux: '$(System.DefaultWorkingDirectory)/*.zip' # Required when connectionType == PublishProfile || WebAppKind == WebApp || WebAppKind == ApiApp || WebAppKind == FunctionApp || WebAppKind == MobileApp || WebAppKind == WebAppLinux || WebAppKind == FunctionAppLinux
     runtimeStack: 'Node.js 8.11' # Optional
     #runtimeStackFunction: # Optional. Options: DOCKER|Microsoft/Azure-Functions-Dotnet-Core2.0:2.0, DOCKER|Microsoft/Azure-Functions-Node8:2.0
     #startupCommand: npm run build # Optional
