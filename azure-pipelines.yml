@@ -23,8 +23,9 @@ steps:
 - task: AzureRmWebAppDeployment@4
   inputs:
     connectionType: 'AzureRM'
-    azureSubscription: 'sfreed141 Azure Resource Manager'
-    appType: 'webApp' # Required when connectionType == AzureRM# Options: webApp, webAppLinux, webAppContainer, functionApp, functionAppLinux, functionAppContainer, apiApp, mobileApp
+    azureSubscription: agariocloneARM
+    appType: 'webApp' # Required when connectionType == AzureRM
+      # Options: webApp, webAppLinux, webAppContainer, functionApp, functionAppLinux, functionAppContainer, apiApp, mobileApp
     webAppName: 'agarioclone' # Required when connectionType == AzureRM
     #publishProfilePath: '$(System.DefaultWorkingDirectory)/**/*.pubxml' # Required when connectionType == PublishProfile
     #publishProfilePassword: # Required when connectionType == PublishProfile
