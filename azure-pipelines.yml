@@ -37,9 +37,9 @@ steps:
     #dockerImageTag: # Optional
     #virtualApplication: # Optional
     #packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip' # Required when connectionType == PublishProfile || WebAppKind == WebApp || WebAppKind == ApiApp || WebAppKind == FunctionApp || WebAppKind == MobileApp || WebAppKind == WebAppLinux || WebAppKind == FunctionAppLinux
-    #runtimeStack: # Optional
+    runtimeStack: 'Node.js 8.11' # Optional
     #runtimeStackFunction: # Optional. Options: DOCKER|Microsoft/Azure-Functions-Dotnet-Core2.0:2.0, DOCKER|Microsoft/Azure-Functions-Node8:2.0
-    #startupCommand: # Optional
+    #startupCommand: npm run build # Optional
     #scriptType: # Optional. Options: , inline Script, file Path
     #inlineScript: ':: You can provide your deployment commands here. One command per line.' # Required when scriptType == Inline Script
     #scriptPath: # Required when scriptType == File Path
